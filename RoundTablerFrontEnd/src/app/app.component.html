@@ -1,0 +1,40 @@
+<h1>{{title}}</h1>
+<mat-card>
+  <form [formGroup]="roundTablerForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Scan Type</mat-label>
+      <mat-select formControlName="scanType">Type of Scan
+        <mat-option *ngFor="let scan of scanTypes" [value]="scan.value">
+          {{scan.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Database Type</mat-label>
+      <input matInput
+             formControlName="dbType">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Database Server Address</mat-label>
+      <input matInput
+             formControlName="dbServerAddress">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Database Username</mat-label>
+      <input matInput
+             formControlName="dbUsername">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Database Password</mat-label>
+      <input matInput
+             formControlName="dbPassword">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Database Name</mat-label>
+      <input matInput
+             formControlName="dbName">
+    </mat-form-field>
+    <button mat-button color="primary" [disabled]="!roundTablerForm.valid" (click)="onClick()">Submit</button>
+  </form>
+
+</mat-card>
